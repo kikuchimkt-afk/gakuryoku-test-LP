@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学力テスト - Mockup 5 (Neobrutalism)</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #A3E635;
+            /* Lime Green */
+            font-family: 'Courier New', Courier, monospace;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 20px solid #000;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main-box {
+            background: #fff;
+            border: 4px solid #000;
+            box-shadow: 10px 10px 0px #000;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .main-box:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px #000;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .badge {
+            background: #F472B6;
+            /* Pink */
+            color: #000;
+            border: 3px solid #000;
+            padding: 5px 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            transform: rotate(-2deg);
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            background: #60A5FA;
+            /* Blue */
+            color: #000;
+            border: 3px solid #000;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 0px #000;
+            transition: all 0.1s;
+        }
+
+        .cta-button:active {
+            transform: translate(5px, 5px);
+            box-shadow: 0px 0px 0px #000;
+        }
+
+        .side-stack {
+            display: grid;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: #FBBF24;
+            /* Yellow */
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px #000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card:nth-child(2) {
+            background: #C084FC;
+            /* Purple */
+        }
+
+        .number {
+            font-size: 3rem;
+            font-weight: 900;
+            display: block;
+        }
+
+        .label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Glitch effect on hover (simulated) */
+        h1:hover {
+            color: #4F46E5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-box">
+            <div><span class="badge">New 2026</span></div>
+            <h1>TEST<br>YoUR<br>LIMITS.</h1>
+            <p>
+                Don't settle for average.<br>
+                Break the ceiling.<br>
+                Math. Science. Society.
+            </p>
+            <a href="#" class="cta-button">START_NOW_&gt;</a>
+        </div>
+
+        <div class="side-stack">
+            <div class="stat-card">
+                <span class="number">10k+</span>
+                <span class="label">Users</span>
+            </div>
+            <div class="stat-card">
+                <span class="number">98%</span>
+                <span class="label">Satisfaction</span>
+            </div>
+            <div class="stat-card"
+                style="background: #fff; background-image: radial-gradient(#000 15%, transparent 16%); background-size: 10px 10px;">
+                <!-- Pattern box -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学力テスト - Mockup 3 (Bento Grid)</title>
+    <style>
+        body {
+            background-color: #f5f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            color: #1d1d1f;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #86868b;
+            margin-top: 10px;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 280px);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            z-index: 10;
+        }
+
+        /* Card Specifics */
+        .card-main {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+            color: white;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .card-main h2 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            line-height: 1;
+        }
+
+        .card-main p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            margin-top: 20px;
+            background: white;
+            color: #FF6B6B;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .card-math {
+            grid-column: span 1;
+            background: #E8F0FE;
+        }
+
+        .text-math {
+            color: #1967d2;
+        }
+
+        .card-science {
+            grid-column: span 1;
+            background: #E6F4EA;
+        }
+
+        .text-science {
+            color: #137333;
+        }
+
+        .card-social {
+            grid-column: span 2;
+            background: #FEF7E0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .text-social {
+            color: #ea8600;
+        }
+
+        .card-stats {
+            grid-column: span 2;
+            grid-row: span 1;
+            /* Actually fits in remaining space if we adjusted grid rows or spans properly */
+        }
+
+        /* Layout Adjustment for 4x2 grid of 8 slots total */
+        /* 
+           [ Main (2x2) ] [ Math ] [ Sci ]
+           [ Main (2x2) ] [ Social (2x1) ]
+        */
+
+        .icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Abstract shapes inside cards */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .s-1 {
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.05);
+            top: -20px;
+            right: -20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Test Suite</h1>
+            <p class="subtitle">Complete Academic Diagnostics</p>
+        </header>
+
+        <div class="bento-grid">
+            <!-- Main CTA -->
+            <div class="card card-main">
+                <div>
+                    <h2>Ready,<br>Set,<br>Grow.</h2>
+                    <p>Unlock your full potential with our comprehensive achievement tests.</p>
+                    <a href="#" class="btn-main">Start Test</a>
+                </div>
+            </div>
+
+            <!-- Math -->
+            <div class="card card-math">
+                <div class="shape s-1"></div>
+                <span class="icon-large">∑</span>
+                <div>
+                    <h3 class="text-math">Math</h3>
+                    <div class="desc">Algebra, Geometry, Calculus</div>
+                </div>
+            </div>
+
+            <!-- Science -->
+            <div class="card card-science">
+                <div class="shape s-1"></div>
+                <span class="icon-large">⚗</span>
+                <div>
+                    <h3 class="text-science">Science</h3>
+                    <div class="desc">Physics, Chemistry, Biology</div>
+                </div>
+            </div>
+
+            <!-- Social Studies -->
+            <div class="card card-social">
+                <div style="flex: 1;">
+                    <span class="icon-large">⚖</span>
+                </div>
+                <div style="flex: 2;">
+                    <h3 class="text-social">Social Studies</h3>
+                    <div class="desc">History, Geography, Civics. Understand the world around you.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

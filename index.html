@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学力テストポータル</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Futura', 'Arial Black', sans-serif;
+            background: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            /* Placeholder for potential background image */
+            /* background: url('assets/bg_edu_blur.png') no-repeat center center fixed; background-size: cover; */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .content {
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            line-height: 0.9;
+            margin: 0 0 20px 0;
+            font-style: italic;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: #ff9a9e;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+
+        .cta-btn-secondary {
+            background: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-btn-secondary:hover {
+            background: #fff;
+            color: #ff9a9e;
+        }
+
+        .background-shapes div {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .circle-1 {
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+        }
+
+        .circle-2 {
+            bottom: 50px;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .circle-3 {
+            top: 20%;
+            right: 30%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .subject-cards {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .subject-card-container {
+            transform: translateX(100px);
+            opacity: 0;
+            animation: slide-in 0.8s forwards;
+            min-width: 250px;
+        }
+
+        .subject-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .subject-card:hover {
+            transform: scale(1.05);
+            background: #fff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .subject-card-container:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .subject-card-container:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .subject-card-container:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+
+        .dot-math {
+            background: #4facfe;
+        }
+
+        .dot-science {
+            background: #43e97b;
+        }
+
+        .dot-social {
+            background: #fa709a;
+        }
+
+        .action-links {
+            font-size: 0.8rem;
+            margin-left: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-link {
+            text-decoration: none;
+            color: #888;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: #eee;
+            transition: all 0.2s;
+        }
+
+        .action-link:hover {
+            background: #ddd;
+            color: #555;
+        }
+
+        @keyframes slide-in {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding-top: 50px;
+                clip-path: none;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .content {
+                margin-bottom: 50px;
+            }
+
+            .subject-cards {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                width: 90%;
+            }
+
+            .subject-card {
+                transform: translateX(0);
+                opacity: 1;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero-section">
+        <div class="background-shapes">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+        </div>
+
+        <div class="content">
+            <h1>Boost<br>Your<br>Brain</h1>
+            <p>限界を超える。知識を武器に。</p>
+            <div class="cta-group">
+                <!-- Direct link to Math as primary for now, or maybe just a smooth scroll? Let's link to Math -->
+                <a href="https://gakuryoku-test-math2.vercel.app/" class="cta-btn">Start Challenge</a>
+            </div>
+        </div>
+
+        <div class="subject-cards">
+            <!-- Math -->
+            <div class="subject-card-container">
+                <a href="https://gakuryoku-test-math2.vercel.app/" class="subject-card">
+                    <div class="card-left">
+                        <div class="dot dot-math"></div>
+                        Mathematics
+                    </div>
+                    <span>&rarr;</span>
+                </a>
+                <div style="text-align: right; margin-top: 5px; padding-right: 10px;">
+                    <a href="https://gakuryoku-test-math2.vercel.app/問題登録.html"
+                        style="color: rgba(255,255,255,0.8); font-size: 0.8rem; text-decoration: none;">[問題登録]</a>
+                </div>
+            </div>
+
+            <!-- Science -->
+            <div class="subject-card-container">
+                <a href="https://gakuryoku-test-science.vercel.app/" class="subject-card">
+                    <div class="card-left">
+                        <div class="dot dot-science"></div>
+                        Science
+                    </div>
+                    <span>&rarr;</span>
+                </a>
+                <div style="text-align: right; margin-top: 5px; padding-right: 10px;">
+                    <a href="https://gakuryoku-test-science.vercel.app/問題登録.html"
+                        style="color: rgba(255,255,255,0.8); font-size: 0.8rem; text-decoration: none;">[問題登録]</a>
+                </div>
+            </div>
+
+            <!-- Social Studies -->
+            <div class="subject-card-container">
+                <a href="https://gakuryoku-test-social.vercel.app/" class="subject-card">
+                    <div class="card-left">
+                        <div class="dot dot-social"></div>
+                        Social Studies
+                    </div>
+                    <span>&rarr;</span>
+                </a>
+                <div style="text-align: right; margin-top: 5px; padding-right: 10px;">
+                    <a href="https://gakuryoku-test-social.vercel.app/問題登録.html"
+                        style="color: rgba(255,255,255,0.8); font-size: 0.8rem; text-decoration: none;">[問題登録]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

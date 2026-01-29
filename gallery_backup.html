@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学力テスト LP Mockups Gallery</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .meta {
+            padding: 20px;
+        }
+
+        .meta h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+        }
+
+        .meta p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Preview Styles */
+        .p1 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #4e4376;
+        }
+
+        .p2 {
+            background: #0f172a;
+            color: #fbbf24;
+        }
+
+        .p3 {
+            background: #fff;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+        .p4 {
+            background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .p5 {
+            background: #A3E635;
+            color: #000;
+            border: 4px solid #000;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>学力テスト LP Design Mockups</h1>
+
+    <div class="gallery">
+        <a href="mockup1.html" class="card">
+            <div class="preview p1">Mockup 1</div>
+            <div class="meta">
+                <h2>Modern Glassmorphism</h2>
+                <p>Trustworthy, clean, frosted glass effects. Current web trend.</p>
+            </div>
+        </a>
+
+        <a href="mockup2.html" class="card">
+            <div class="preview p2">Mockup 2</div>
+            <div class="meta">
+                <h2>Dark Premium</h2>
+                <p>High-end, sophisticated, serious study atmosphere.</p>
+            </div>
+        </a>
+
+        <a href="mockup3.html" class="card">
+            <div class="preview p3">Mockup 3</div>
+            <div class="meta">
+                <h2>Bento Grid</h2>
+                <p>Structured, information-dense, organized card layout.</p>
+            </div>
+        </a>
+
+        <a href="mockup4.html" class="card">
+            <div class="preview p4">Mockup 4</div>
+            <div class="meta">
+                <h2>Vibrant Gradient</h2>
+                <p>Energetic, motivating, colorful and bold.</p>
+            </div>
+        </a>
+
+        <a href="mockup5.html" class="card">
+            <div class="preview p5">Mockup 5</div>
+            <div class="meta">
+                <h2>Neobrutalism</h2>
+                <p>Trendy, high contrast, raw and distinctive.</p>
+            </div>
+        </a>
+    </div>
+
+</body>
+
+</html>
